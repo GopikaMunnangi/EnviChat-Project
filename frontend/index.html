@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoBees</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Quicksand:wght@400;600&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --mint: #a8e6cf;
+      --dark-mint: #56c596;
+      --text-dark: #2f4f4f;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background-color: #f6fffb;
+      color: var(--text-dark);
+    }
+
+    header {
+      background-color: var(--mint);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-title img {
+      width: 50px;
+      margin-right: 15px;
+    }
+
+    .title-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .caption {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 14px;
+      color: #3a6f60;
+      margin-top: 3px;
+    }
+
+    .hamburger {
+      font-size: 28px;
+      cursor: pointer;
+      display: block;
+    }
+
+    .navbar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: var(--dark-mint);
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      padding: 10px 30px;
+      text-decoration: none;
+      font-size: 20px;
+      color: white;
+      display: block;
+      transition: background 0.3s;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .navbar a:hover {
+      background-color: #44aa7b;
+    }
+
+    .navbar .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: 20px auto 0;
+    }
+
+    .slides {
+      display: none;
+      width: 100%;
+      text-align: center;
+    }
+
+    .slides img {
+      max-width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .dot-container {
+      position: relative;
+      bottom: -15px;
+      text-align: center;
+      width: 100%;
+      padding: 10px 0;
+      margin-top: 10px;
+    }
+
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .active {
+      background-color: var(--dark-mint);
+    }
+
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+
+    .quotes {
+      text-align: center;
+      font-style: italic;
+      font-size: 20px;
+      margin: 40px 0;
+      min-height: 40px;
+      transition: opacity 1s ease-in-out;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 30px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--dark-mint);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .card p {
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .card button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: var(--dark-mint);
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .join {
+      text-align: center;
+      padding: 40px;
+      background-color: var(--mint);
+      font-size: 22px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .join button {
+      background-color: var(--dark-mint);
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-top: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .join button:hover {
+      background-color: #44aa7b;
+    }
+
+    .creator {
+      padding: 30px;
+      background-color: #e6fff7;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .creator h2 {
+      color: var(--dark-mint);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .footer-col {
+      flex: 1 1 200px;
+      margin: 10px;
+    }
+
+    .footer-col h4 {
+      border-bottom: 2px solid var(--mint);
+      padding-bottom: 5px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-col a {
+      display: block;
+      color: #a8e6cf;
+      text-decoration: none;
+      margin-top: 8px;
+    }
+
+    .footer-col a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-title">
+    <img src="EcoBees.png" alt="EcoBees Logo">
+    <div class="title-group">
+      <div class="title">EcoBees</div>
+      <div class="caption">Together for a greener tomorrow</div>
+    </div>
+  </div>
+  <span class="hamburger" onclick="openNav()">&#9776;</span>
+</header>
+
+<div id="myNav" class="navbar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Home</a>
+  <a href="./profile.html">Profile</a>
+  <a href="#">Events</a>
+  <a href="#">Projects</a>
+  <a href="#">Community</a>
+  <a href="#">Settings</a>
+  <a href="#">Contact</a>
+</div>
+<br>
+<div class="slideshow-container">
+  <div class="slides fade" style="display:block">
+    <img src="welcomeecobees.png" alt="EcoBees welcoming community">
+  </div>
+  <div class="slides fade">
+    <img src="planttogether.png" alt="Community environmental projects">
+  </div>
+  <div class="slides fade">
+    <img src="chat.png" alt="Sustainability initiatives">
+  </div>
+  
+  <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+</div>
+
+<div class="quotes" id="quoteBox">“The Earth is what we all have in common.” – Wendell Berry</div>
+
+<div class="cards">
+  <div class="card">
+    <h3>Join Events</h3>
+    <p>Be part of eco-friendly events organized in your area and online.</p>
+    <button>Sign Up</button>
+  </div>
+  <div class="card">
+    <h3>Share Ideas</h3>
+    <p>Post your thoughts and projects to inspire others.</p>
+    <button>Register</button>
+  </div>
+  <div class="card">
+    <h3>Track Projects</h3>
+    <p>Monitor green initiatives and their progress in real-time.</p>
+    <button>Explore</button>
+  </div>
+</div>
+
+<div class="join">
+  🌿 Join us in making the world cleaner, greener, and better. Let's do this together!
+  <br><br>
+  <button onclick="alert('Redirect to Create Account')">Join Us</button>
+</div>
+
+<div class="creator">
+  <h2>Message from the Creator</h2>
+  <p>Hello! I'm Gopika, the creator of EcoBees. First, Thank you for coming here. Since childhood, I have dreamt of growing a lot of trees in my lifetime. So, This is a platform that I have created to make a community where environmentalists from across the world can talk, learn and grow trees together. I hope one day the world become even more greener and this platform may help with it. Please join in our movement to give a beautiful green planet to our future generations. Join now and let's talk!!💚</p>
+  <div class="cards">
+    <div class="card">
+      <h3>Compete with Others</h3>
+      <p>Earn leadscores and top the eco leaderboard!</p>
+      <button>Participate</button>
+    </div>
+    <div class="card">
+      <h3>Chat and Connect</h3>
+      <p>Join community discussions with fellow eco-warriors.</p>
+      <button>Chat Now</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-col">
+    <h4>About</h4>
+    <a href="#">Our Mission</a>
+    <a href="#">Team</a>
+    <a href="#">Careers</a>
+  </div>
+  <div class="footer-col">
+    <h4>Contact</h4>
+    <a href="#">Email Us</a>
+    <a href="#">Help Center</a>
+    <a href="#">FAQs</a>
+  </div>
+  <div class="footer-col">
+    <h4>Follow Us</h4>
+    <a href="#">Instagram</a>
+    <a href="#">Twitter</a>
+    <a href="#">Facebook</a>
+  </div>
+</footer>
+
+<script>
+  function openNav() {
+    document.getElementById("myNav").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0";
+  }
+
+  const quotes = [
+    "“The Earth is what we all have in common.” – Wendell Berry",
+    "“Nature does not hurry, yet everything is accomplished.” – Lao Tzu",
+    "“He that plants trees loves others besides himself.” – Thomas Fuller",
+    "“The future will either be green or not at all.” – Bob Brown"
+  ];
+  let quoteIndex = 0;
+
+  setInterval(() => {
+    quoteIndex = (quoteIndex + 1) % quotes.length;
+    const quoteBox = document.getElementById("quoteBox");
+    if (quoteBox) {
+      quoteBox.style.opacity = 0;
+      setTimeout(() => {
+        quoteBox.innerText = quotes[quoteIndex];
+        quoteBox.style.opacity = 1;
+      }, 500);
+    }
+  }, 6000);
+
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    const slides = document.getElementsByClassName("slides");
+    const dots = document.getElementsByClassName("dot");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (let j = 0; j < dots.length; j++) {
+      dots[j].className = dots[j].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";  
+    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 5000);
+  }
+
+  function currentSlide(n) {
+    slideIndex = n - 1;
+    showSlides();
+  }
+</script>
+
+</body>
+</html>

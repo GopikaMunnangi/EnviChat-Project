@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoBees - Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --mint: #a8e6cf;
+      --dark-mint: #56c596;
+      --text-dark: #2f4f4f;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0fdf7;
+      color: var(--text-dark);
+    }
+
+    /* Navbar */
+    nav {
+      background-color: var(--dark-mint);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h1 {
+      margin: 0;
+      color: white;
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Profile Section */
+    .profile-header {
+      display: flex;
+      align-items: center;
+      padding: 2rem;
+      gap: 2rem;
+    }
+
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background-color: var(--mint);
+      background-size: cover;
+      background-position: center;
+      border: 4px solid var(--dark-mint);
+    }
+
+    .profile-info {
+      flex-grow: 1;
+    }
+
+    .profile-info h2 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .stats {
+      display: flex;
+      gap: 1.5rem;
+      margin: 0.5rem 0;
+    }
+
+    .stats div {
+      font-weight: bold;
+    }
+
+    .bio {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .edit-btn {
+      background-color: var(--dark-mint);
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 0.8rem;
+    }
+
+    /* Posts Grid */
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .post {
+      background-color: var(--mint);
+      height: 180px;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
+      border: 3px solid var(--dark-mint);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .profile-pic {
+        margin-bottom: 1rem;
+      }
+
+      nav h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>EcoBees</h1>
+    <a href="index.html">← Back to Home</a>
+  </nav>
+
+  <div class="profile-header">
+    <div class="profile-pic" style="background-image: url('https://via.placeholder.com/150');"></div>
+    <div class="profile-info">
+      <h2 id="username">eco_warrior_01</h2>
+      <div class="stats">
+        <div><span id="posts-count">12</span> Posts</div>
+        <div><span id="followers-count">345</span> Followers</div>
+        <div><span id="following-count">180</span> Following</div>
+      </div>
+      <div class="bio" id="bio">Planting trees and cleaning seas 🌱🌊</div>
+      <button id="editProfileBtn" class="edit-btn" onclick="window.location.href='editprofile.html'">Edit Profile</button>
+
+    </div>
+  </div>
+
+  <div class="posts" id="posts">
+    <div class="post" style="background-image: url('https://source.unsplash.com/200x200/?nature');"></div>
+    <div class="post" style="background-image: url('https://source.unsplash.com/200x200/?eco');"></div>
+    <div class="post" style="background-image: url('https://source.unsplash.com/200x200/?green');"></div>
+    <div class="post" style="background-image: url('https://source.unsplash.com/200x200/?environment');"></div>
+  </div>
+
+  <script>
+    // Simulating logged-in user
+    const isOwnProfile = true; // change to false to simulate other user
+
+    if (isOwnProfile) {
+      document.getElementById('editProfileBtn').style.display = 'inline-block';
+    }
+  </script>
+
+</body>
+</html>

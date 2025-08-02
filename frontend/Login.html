@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - EcoBees</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #e9fdf0;
+      color: #222;
+    }
+
+    header {
+      background-color: #a2d5ab;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      width: 32px;
+      height: 32px;
+      margin-right: 0.5rem;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #054d28;
+      text-decoration: none;
+    }
+
+    .back-link {
+      color: #054d28;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 3rem auto;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 2rem 1.5rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 0;
+      color: #054d28;
+    }
+
+    label {
+      display: block;
+      margin: 1rem 0 0.3rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      background-color: #54ba71;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4aa863;
+    }
+
+    .text-center {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .text-center a {
+      color: #007a3d;
+      text-decoration: none;
+    }
+
+    .text-center a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="EcoBees.png" alt="Logo" class="logo-img" />
+      <a href="index.html" class="logo-text">EcoBees</a>
+    </div>
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </header>
+
+  <div class="container">
+    <h2>Login</h2>
+    <form action="HomePage.html" method="POST">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit">Login</button>
+
+      <div class="text-center">
+        Don't have an account? <a href="Register.html">Register</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

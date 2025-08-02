@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Settings - EcoBees</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #e9fdf0;
+      color: #222;
+    }
+
+    header {
+      background-color: #a2d5ab;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .left-header {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      width: 32px;
+      height: 32px;
+      margin-right: 0.6rem;
+    }
+
+    .logo-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #054d28;
+      text-decoration: none;
+    }
+
+    .back-btn {
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+      background-color: #ffffff;
+      color: #054d28;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: background-color 0.2s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #d9f5e1;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1.5rem 1.2rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 0;
+      color: #054d28;
+    }
+
+    .settings-item {
+      padding: 1rem 0.8rem;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .settings-item:hover {
+      background-color: #f0fff4;
+    }
+
+    .settings-item:last-child {
+      border-bottom: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .category-title {
+      margin: 1.2rem 0 0.4rem 0.8rem;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #5e7d63;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="left-header">
+      <img src="logo.png" alt="EcoBees Logo" class="logo-img">
+      <a href="index.html" class="logo-title">EcoBees</a>
+    </div>
+    <a href="index.html" class="back-btn">Back to Home</a>
+  </header>
+
+  <div class="container">
+    <h2>Settings</h2>
+
+    <div class="category-title">Content & Activity</div>
+    <div class="settings-item"><a href="SavedPosts.html">Saved Posts</a></div>
+    <div class="settings-item"><a href="YourActivity.html">Your Activity</a></div>
+    <div class="settings-item"><a href="Notifications.html">Notifications</a></div>
+
+    <div class="category-title">Account Settings</div>
+    <div class="settings-item"><a href="PrivacySettings.html">Account Privacy</a></div>
+    <div class="settings-item"><a href="BlockedUsers.html">Blocked Accounts</a></div>
+    <div class="settings-item"><a href="Verification.html">Account Verification</a></div>
+
+    <div class="category-title">Appearance</div>
+    <div class="settings-item"><a href="ThemeSettings.html">Theme Options</a></div>
+
+    <div class="category-title">Others</div>
+    <div class="settings-item"><a href="index.html">Logout</a></div>
+  </div>
+</body>
+</html>

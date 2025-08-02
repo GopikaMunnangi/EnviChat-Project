@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - EcoBees</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #e9fdf0;
+      color: #222;
+    }
+
+    header {
+      background-color: #a2d5ab;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .left-header {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 32px;
+      margin-right: 10px;
+    }
+
+    .logo-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #054d28;
+    }
+
+    .back-btn {
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: #054d28;
+      border: 1px solid #054d28;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #c0e8cc;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 2rem auto;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      color: #054d28;
+      margin-bottom: 1.5rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.6rem 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.9rem;
+      background-color: #6fcf97;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #58bd80;
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .login-link a {
+      color: #054d28;
+      text-decoration: none;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="left-header">
+      <img src="logo.png" alt="Logo" class="logo-img" />
+      <div class="logo-title">EcoBees</div>
+    </div>
+    <a href="index.html" class="back-btn">Back to Home</a>
+  </header>
+
+  <div class="container">
+    <h2>Create Account</h2>
+    <form id="registerForm">
+      <input type="text" placeholder="Full Name" required />
+      <input type="text" placeholder="Username" required />
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <input type="password" placeholder="Confirm Password" required />
+      <button type="submit">Register</button>
+    </form>
+    <div class="login-link">
+      Already have an account? <a href="login.html">Login</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Simulate auto-login after registration
+      alert("Registered successfully! Logging you in...");
+      window.location.href = "home.html"; // change this to your logged-in home
+    });
+  </script>
+
+</body>
+</html>
